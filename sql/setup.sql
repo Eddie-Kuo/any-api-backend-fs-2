@@ -8,15 +8,15 @@ CREATE TABLE neighborhood_dogs (
   name VARCHAR NOT NULL,
   breed VARCHAR NOT NULL,
   favorite_snack VARCHAR NOT NULL,
-  age INT NOT NULL
-  sociable BOOLEAN NOT NULL
+  age INT NOT NULL,
+  is_sociable BOOLEAN NOT NULL
 );
 
-INSERT INTO cartoon_cats (name, breed, favorite_snack, age, sociable)
+INSERT INTO neighborhood_dogs (name, breed, favorite_snack, age, is_sociable)
 VALUES 
 ('Brodie', 'Corgi', 'freeze-dried chicken', 3, TRUE),
 ('Lexi', 'Shiba Inu', 'Costco chicken jerky', 3, FALSE),
 ('Harris', 'Pitbull', 'fresh fruit', 8, TRUE),
 ('Gandalf', 'Great Dane', 'Beef jerky', 2, TRUE),
 ('Savanna', 'Great Dane/ Labrador', 'Beef jerky', 9, FALSE),
-('Howie', 'Golden Retriever', 'ANYTHING', 1, TRUE),
+('Howie', 'Golden Retriever', 'ANYTHING', 1, TRUE);
