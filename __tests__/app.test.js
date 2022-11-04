@@ -25,7 +25,7 @@ describe('dog routes', () => {
   // });
   test('/dogs/:id detail route', async () => {
     const res = await request(app).get('/dogs/1');
-    const brodie = {
+    const expected = {
       id: '1',
       name: 'Brodie',
       breed: 'Corgi',
@@ -33,7 +33,7 @@ describe('dog routes', () => {
       age: 3,
       is_sociable: true,
     };
-    expect(res.body).toEqual(brodie);
+    expect(res.body).toEqual(expected);
   });
   afterAll(() => {
     pool.end();
