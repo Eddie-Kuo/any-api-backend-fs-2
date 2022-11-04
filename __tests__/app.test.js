@@ -44,6 +44,17 @@ describe('dog routes', () => {
       });
       expect(res.body).toEqual(expected);
     });
+    test('/pokemon/:id detail route', async () => {
+      const res = await request(app).get('/pokemon/1');
+      const expected = {
+        id: '1',
+        name: 'Charmander',
+        type: 'fire',
+        pokedex_number: 4,
+        region: 'Kanto',
+      };
+      expect(res.body).toEqual(expected);
+    });
   });
   afterAll(() => {
     pool.end();
