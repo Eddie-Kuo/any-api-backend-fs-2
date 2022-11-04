@@ -35,6 +35,15 @@ describe('dog routes', () => {
     };
     expect(res.body).toEqual(expected);
   });
+  describe('pokemon routes', () => {
+    test('/pokemon route returns list', async () => {
+      const res = await request(app).get('/pokemon');
+      const expected = pokemonList.map((pokemon) => {
+        return { id: pokemon.id, name: pokemon.name };
+      });
+      expect(res.body).toEqual(expected);
+    });
+  });
   afterAll(() => {
     pool.end();
   });
