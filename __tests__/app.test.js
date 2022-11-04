@@ -23,6 +23,18 @@ describe('dog routes', () => {
   //   const res = await request(app).get('/dogs');
   //   expect(res.body).toEqual(expected);
   // });
+  test('/dogs/:id detail route', async () => {
+    const res = await request(app).get('/dogs/1');
+    const brodie = {
+      id: '1',
+      name: 'Brodie',
+      breed: 'Corgi',
+      favorite_snack: 'freeze-dried chicken',
+      age: 3,
+      is_sociable: true,
+    };
+    expect(res.body).toEqual(brodie);
+  });
   afterAll(() => {
     pool.end();
   });
