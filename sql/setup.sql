@@ -20,3 +20,23 @@ VALUES
 ('Gandalf', 'Great Dane', 'Beef jerky', 2, TRUE),
 ('Savanna', 'Great Dane/ Labrador', 'Beef jerky', 9, FALSE),
 ('Howie', 'Golden Retriever', 'ANYTHING', 1, TRUE);
+
+DROP TABLE IF EXISTS pokemon;
+
+CREATE TABLE pokemon (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR NOT NULL,
+    type VARCHAR NOT NULL,
+    pokedex_number INT NOT NULL,
+    region VARCHAR NOT NULL
+);
+
+INSERT INTO pokemon (name, type, pokedex_number, region)
+VALUES
+('Charmander', 'fire', 4, 'Kanto'),
+('Gyarados', 'water', 130, 'Kanto'),
+('Dragonite', 'dragon', 149, 'Kanto'),
+('Snorunt', 'ice', 361, 'Hoenn'), 
+('Dusclops', 'ghost', 356, 'Hoenn'),
+('Totodile', 'water', 158, 'Johto'),
+('Bayleef', 'grass', 153, 'Johto');
