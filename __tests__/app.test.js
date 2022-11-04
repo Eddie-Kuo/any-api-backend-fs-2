@@ -3,6 +3,7 @@ const setup = require('../data/setup');
 const app = require('../lib/app');
 const request = require('supertest');
 const { dogs } = require('../lib/dogs-data');
+const { pokemonList } = require('../lib/pokemon-data');
 // const app = require('../lib/app');
 
 describe('dog routes', () => {
@@ -39,7 +40,7 @@ describe('dog routes', () => {
     test('/pokemon route returns list', async () => {
       const res = await request(app).get('/pokemon');
       const expected = pokemonList.map((pokemon) => {
-        return { id: pokemon.id, name: pokemon.name };
+        return { id: pokemon.id, name: pokemon.name, type: pokemon.type };
       });
       expect(res.body).toEqual(expected);
     });
